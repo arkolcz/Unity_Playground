@@ -22,6 +22,7 @@ public class SettingsManager : MonoBehaviour
 
     void OnEnable()
     {
+        string settingsFilePath = (Application.persistentDataPath + "/Settings.cfg");
         gameSettings = new GameSettings();
 
         fullscreenToggle.onValueChanged.AddListener(delegate { OnFullscreenToggle(); });
@@ -38,7 +39,14 @@ public class SettingsManager : MonoBehaviour
             resolutionDropdown.options.Add(new Dropdown.OptionData(resolution.ToString()));
         }
 
-        LoadSettingsFromFile();
+        if (File.Exists(settingsFilePath))
+        {
+            LoadSettingsFromFile(settingsFilePath);
+        }
+        else
+        {
+            SetDefaultValues();
+        }
     }
 
     public void OnFullscreenToggle()
@@ -89,9 +97,9 @@ public class SettingsManager : MonoBehaviour
         File.WriteAllText(Application.persistentDataPath + "/Settings.cfg", jsonData);  // Store File in AppData folder
     }
 
-    public void LoadSettingsFromFile()
+    public void LoadSettingsFromFile(string pathToFile)
     {
-        gameSettings = JsonUtility.FromJson<GameSettings>(File.ReadAllText(Application.persistentDataPath + "/Settings.cfg"));
+        gameSettings = JsonUtility.FromJson<GameSettings>(File.ReadAllText(pathToFile));
         musicVolumeSlider.value = gameSettings.musicVolume;
         antialiasingDropdown.value = gameSettings.antialiasing;
         vSyncDropdown.value = gameSettings.vSync;
@@ -102,4 +110,13 @@ public class SettingsManager : MonoBehaviour
         resolutionDropdown.RefreshShownValue();
     }
 
+    public void SetDefaultValues()
+    {
+        musicVolumeSlider.value = 0.3f;
+        antialiasingDropdown.value = 0;
+        vSyncDropdown.value = 0;
+        textureQualityDropdown.value = 0;
+        resolutionDropdown.value = 0;
+        fullscreenToggle.isOn = true;
+    }
 }
