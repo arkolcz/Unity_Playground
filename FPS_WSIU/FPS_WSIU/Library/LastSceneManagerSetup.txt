@@ -1,8 +1,0 @@
-sceneSetups:
-<<<<<<< HEAD
-- path: Assets/_Scenes/01Menu.unity
-=======
-- path: Assets/_Scenes/00Splash.unity
->>>>>>> Minor changes to SplashScreenManager and 01Menu
-  isLoaded: 1
-  isActive: 1
