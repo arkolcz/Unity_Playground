@@ -74,7 +74,8 @@ public class SettingsManager : MonoBehaviour
 
     public void OnMusicVolumeChange()
     {
-        // TODO: Add volume handling.
+        gameSettings.musicVolume = musicVolumeSlider.value;
+        musicSource.volume = gameSettings.musicVolume;
     }
 
     public void OnSaveButtonClick()
@@ -100,4 +101,5 @@ public class SettingsManager : MonoBehaviour
 
         resolutionDropdown.RefreshShownValue();
     }
+
 }
