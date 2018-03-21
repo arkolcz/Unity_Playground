@@ -1,0 +1,5 @@
+<<<<<<< HEAD
+m_EditorVersion: 2017.3.0f3
+=======
+m_EditorVersion: 2017.3.1f1
+>>>>>>> Minor changes to SplashScreenManager and 01Menu

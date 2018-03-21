@@ -5,10 +5,12 @@ Made by RoXKhaar
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SplashScreenManager : MonoBehaviour
 {
     public Image splashImage;
+    public string sceneToLoad;
 
     IEnumerator Start()
     {
@@ -19,6 +21,7 @@ public class SplashScreenManager : MonoBehaviour
         FadeOut();
         yield return new WaitForSeconds(2.5f);
 
+        SceneManager.LoadScene(sceneToLoad);
     }
 
     private void FadeIn()
@@ -28,6 +31,6 @@ public class SplashScreenManager : MonoBehaviour
 
     private void FadeOut()
     {
-        splashImage.CrossFadeAlpha(0.0f, 2.5f, false);
+        splashImage.CrossFadeAlpha(0.0f, 1.5f, false);
     }
 }
