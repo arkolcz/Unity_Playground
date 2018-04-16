@@ -39,13 +39,22 @@ public class SettingsManager : MonoBehaviour
             resolutionDropdown.options.Add(new Dropdown.OptionData(resolution.ToString()));
         }
 
-        if (File.Exists(settingsFilePath))
+        if (!File.Exists(settingsFilePath))
         {
-            LoadSettingsFromFile(settingsFilePath);
+            SetDefaultValues();            
         }
         else
         {
-            SetDefaultValues();
+            try
+            {
+                LoadSettingsFromFile(settingsFilePath);
+            }                
+            catch
+            {
+                // If reading from file fail set default values instead.
+                Debug.Log(settingsFilePath + "file data corrupted or unacessible");
+                SetDefaultValues();
+            }
         }
     }
 

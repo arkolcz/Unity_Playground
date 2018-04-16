@@ -3,7 +3,7 @@ Made by RoXKhaar
 */
 
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class MenuManager : MonoBehaviour {
 
     public GameObject settingsMenu;
@@ -11,7 +11,7 @@ public class MenuManager : MonoBehaviour {
 
     public void Play()
     {
-        // TODO: Load Game Scene
+        SceneManager.LoadScene("02Playground");
     }
 
     public void MenuTabManager()

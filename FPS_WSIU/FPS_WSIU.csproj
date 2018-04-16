@@ -290,6 +290,8 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\GameSettings.cs" />
     <Compile Include="Assets\Scripts\MenuManager.cs" />
+    <Compile Include="Assets\Scripts\PlayerMechanism.cs" />
+    <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\SettingsManager.cs" />
     <Compile Include="Assets\Scripts\SplashScreenManager.cs" />
     <Compile Include="Assets\Simple UI\Samples\IconPreview.cs" />
