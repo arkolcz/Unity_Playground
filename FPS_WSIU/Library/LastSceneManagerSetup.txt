@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/_Scenes/02Playground.unity
+- path: Assets/_Scenes/02DesertPlayground.unity
   isLoaded: 1
   isActive: 1

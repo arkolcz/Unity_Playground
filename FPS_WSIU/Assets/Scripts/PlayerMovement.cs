@@ -54,7 +54,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (jumpPower != Vector3.zero)
         {
-            rb.AddForce(jumpPower * Time.fixedDeltaTime, ForceMode.Acceleration);
+            rb.AddForce(jumpPower * Time.fixedDeltaTime, ForceMode.Impulse);
         }
     }
 

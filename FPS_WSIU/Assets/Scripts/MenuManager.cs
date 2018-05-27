@@ -11,7 +11,7 @@ public class MenuManager : MonoBehaviour {
 
     public void Play()
     {
-        SceneManager.LoadScene("02Playground");
+        SceneManager.LoadScene("02DesertPlayground");
     }
 
     public void MenuTabManager()
